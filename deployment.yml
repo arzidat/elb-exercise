@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-anna
+  labels:
+    app: nginx-anna
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-anna
+  template:
+    metadata:
+      labels:
+        app: nginx-anna
+    spec:
+      containers:
+      - name: nginx
+        image: nginx

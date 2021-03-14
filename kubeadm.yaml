@@ -1,0 +1,24 @@
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+clusterName: K8s-cluster
+kubernetesVersion: v1.18.1
+networking:
+ dnsDomain: cluster.local
+ podSubnet: 10.244.0.0/16
+ serviceSubnet: 10.96.0.0/12
+apiServer:
+ extraArgs:
+   authorization-mode: Node,RBAC
+   cloud-provider: aws
+ timeoutForControlPlane: 4m0s
+controllerManager:
+ extraArgs:
+   cloud-provider: aws
+   configure-cloud-routes: "false"
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: InitConfiguration
+nodeRegistration:
+ kubeletExtraArgs:
+   cloud-provider: aws
