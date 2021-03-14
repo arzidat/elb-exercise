@@ -211,3 +211,31 @@ k delete lb-service
 k get svc
 k apply -f service.yml 
 k get svc
+alias k="kubectl"
+k apply -f deployyy.yml
+clear
+pwd
+echo "# elb-exercise" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/arzidat/elb-exercise.git
+git push -u origin mainclear
+yum install git
+echo "# elb-exercise" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/arzidat/elb-exercise.git
+git push -u origin main
+ls
+git add .
+git status
+git commit -m "first commit"
+git push
+clear
+kubectl apply -f deployment.yml 
+kubectl apply -f lb.yml 
+kubectl get svc
